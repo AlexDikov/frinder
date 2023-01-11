@@ -1,18 +1,15 @@
 {
   "files": {
-    "main.css": "/frinder/static/css/main.fb3cfb09.css",
-    "main.js": "/frinder/static/js/main.bf339e8d.js",
-    "static/media/Buddy.gif": "/frinder/static/media/Buddy.de4cdc1e9674a8a39578.gif",
-    "static/media/hobby.gif": "/frinder/static/media/hobby.f1071a146bca75c9ebbd.gif",
-    "static/media/event.gif": "/frinder/static/media/event.30230f8d3004852f8615.gif",
-    "static/media/head.png": "/frinder/static/media/head.36caadfb790db811c7ed.png",
+    "main.css": "/frinder/static/css/main.8521c536.css",
+    "main.js": "/frinder/static/js/main.ae62a3f7.js",
+    "static/media/me.jpg": "/frinder/static/media/me.7de3924b2975517c5c6f.jpg",
     "static/media/hands.jpg": "/frinder/static/media/hands.390ff848f93371e3cd18.jpg",
     "index.html": "/frinder/index.html",
-    "main.fb3cfb09.css.map": "/frinder/static/css/main.fb3cfb09.css.map",
-    "main.bf339e8d.js.map": "/frinder/static/js/main.bf339e8d.js.map"
+    "main.8521c536.css.map": "/frinder/static/css/main.8521c536.css.map",
+    "main.ae62a3f7.js.map": "/frinder/static/js/main.ae62a3f7.js.map"
   },
   "entrypoints": [
-    "static/css/main.fb3cfb09.css",
-    "static/js/main.bf339e8d.js"
+    "static/css/main.8521c536.css",
+    "static/js/main.ae62a3f7.js"
   ]
 }
