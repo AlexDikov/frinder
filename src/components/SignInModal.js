@@ -5,15 +5,13 @@ import FloatingInput from "./FloatingInput";
 export default function SignInModal(props) {
   return (
     <Modal {...props} size="md" aria-labelledby="contained-modal-title-vcenter" centered>
-      <Modal.Header closeButton></Modal.Header>
+      <Modal.Header closeButton>Please fill info below to sign in your account</Modal.Header>
       <Modal.Body>
         <FloatingInput name="Email" type="email" />
         <FloatingInput name="Password" type="password" />
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide} variant="secondary">
-          Submit
-        </Button>
+        <Button variant="secondary">Submit</Button>
       </Modal.Footer>
     </Modal>
   );

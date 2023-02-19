@@ -1,32 +1,76 @@
 import "./App.css";
-import React, { useState } from "react";
-import { Routes } from "react-router-dom";
-import { Route } from "react-router-dom";
+import { useState } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
 import PageNotFound from "./components/PageNotFound";
 import Main from "./components/Main";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Profile from "./components/Profile";
 import SignUpModal from "./components/SignUpModal";
 import SignInModal from "./components/SignInModal";
+import Chat from "./components/Chat";
+import NewFriends from "./components/NewFriends";
+import Map from "./components/Map";
+import Events from "./components/Events";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-//import "../src/styles.css";
 
 function App() {
-  const [signUpModalShow, setSignUpModalShow] = React.useState(false);
-  const [signInModalShow, setSignInModalShow] = React.useState(false);
+  const [signUpModalShow, setSignUpModalShow] = useState(false);
+  const [signInModalShow, setSignInModalShow] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
 
   return (
     <div className="App">
-      <SignUpModal show={signUpModalShow} onHide={() => setSignUpModalShow(false)} />
-      <SignInModal show={signInModalShow} onHide={() => setSignInModalShow(false)} />
+      <Header onSignUpModalShow={setSignUpModalShow} onSignInModalShow={setSignInModalShow} isLoggedIn={loggedIn} />
       <Routes>
+        <Route path="/" element={<Main />} />
         <Route
-          path="/"
-          element={<Main onSignUpModalShow={setSignUpModalShow} onSignInModalShow={setSignInModalShow} />}
+          path="/profile"
+          element={
+            <ProtectedRoute isLoggedIn={loggedIn} onSignIn={setSignInModalShow}>
+              <Profile />
+            </ProtectedRoute>
+          }
         />
-        <Route path="/profile" element={<Profile />} />
+        <Route
+          path="/newfriends"
+          element={
+            <ProtectedRoute isLoggedIn={loggedIn} onSignIn={setSignInModalShow}>
+              <NewFriends />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/chat"
+          element={
+            <ProtectedRoute isLoggedIn={loggedIn} onSignIn={setSignInModalShow}>
+              <Chat />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/map"
+          element={
+            <ProtectedRoute isLoggedIn={loggedIn} onSignIn={setSignInModalShow}>
+              <Map />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/events"
+          element={
+            <ProtectedRoute isLoggedIn={loggedIn} onSignIn={setSignInModalShow}>
+              <Events />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
+      <Footer />
+      <SignUpModal show={signUpModalShow} onHide={() => setSignUpModalShow(false)} />
+      <SignInModal show={signInModalShow} onHide={() => setSignInModalShow(false)} />
     </div>
   );
 }

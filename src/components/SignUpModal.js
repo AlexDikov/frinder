@@ -5,23 +5,23 @@ import FloatingInput from "./FloatingInput";
 export default function SignUpModal(props) {
   return (
     <Modal {...props} size="md" aria-labelledby="contained-modal-title-vcenter" centered>
-      <Modal.Header closeButton></Modal.Header>
+      <Modal.Header closeButton onHide={props.onHide}>
+        Please fill info below to create new account
+      </Modal.Header>
       <Modal.Body>
         <FloatingInput name="Email" id="userEmail" type="email" />
         <FloatingInput name="Create password" id="userPassword" />
         <FloatingInput name="Your name" id="userName" />
         <FloatingInput name="Date of birth" type="date" id="userBirth" />
-        <select class="form-control form-control-sm mb-3">
+        <select className="form-control form-control-sm mb-3">
           <option>Female</option>
           <option>Male</option>
         </select>
-        <FloatingInput name="Place photo" type="file" />
-        <FloatingInput name="Tell about yourself" type="textarea" />
+        <FloatingInput name="Place photo" type="file" id="userPhoto" />
+        <FloatingInput name="Tell about yourself" type="textarea" id="userAbout" />
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide} variant="secondary">
-          Submit
-        </Button>
+        <Button variant="secondary">Submit</Button>
       </Modal.Footer>
     </Modal>
   );

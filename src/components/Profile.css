@@ -2,7 +2,7 @@
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(15px);
     display: flex;
-    height: 90vh;
+    height: 85vh;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
