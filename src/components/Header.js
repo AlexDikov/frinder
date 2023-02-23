@@ -1,11 +1,11 @@
 import "./Header.css";
-import React, { useState } from "react";
 import HeaderMenu from "./HeaderMenu";
 import Nav from "./Nav";
-import { Button } from "react-bootstrap";
+import { useContext } from "react";
+import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
 export default function Header(props) {
-  //const [mainMenu, setMainMenu] = React.useState(null);
+  const currentUser = useContext(CurrentUserContext);
 
   return (
     <div className="Header">
@@ -15,11 +15,10 @@ export default function Header(props) {
         isLoggedIn={props.isLoggedIn}
         onSignUpModalShow={props.onSignUpModalShow}
         onSignInModalShow={props.onSignInModalShow}
-        title={props.isLoggedIn ? "Alex" : "Account"}
+        title={props.isLoggedIn ? currentUser.name : "Account"}
         btnOneTitle={props.isLoggedIn ? "My profile" : "Sign Up"}
         btnTwoTitle={props.isLoggedIn ? "Sign out" : "Sign In"}
       />
     </div>
   );
 }
-//<Dropdown onSignUpModalShow={props.onSignUpModalShow} onSignInModalShow={props.onSignInModalShow} />
